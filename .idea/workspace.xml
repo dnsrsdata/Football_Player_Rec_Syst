@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45022a72-16fc-42e2-8d95-fdf0aff18053" name="Changes" comment="Adding the motivation section">
-      <change afterPath="$PROJECT_DIR$/Data/defense_actions_bg5.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/goalkeepers_bg5.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/passes_bg5.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data/shoots_bg5.csv" afterDir="false" />
-    </list>
+    <list default="true" id="45022a72-16fc-42e2-8d95-fdf0aff18053" name="Changes" comment="Starting to understand and correct the data - Version .ipynb" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +68,7 @@
       <workItem from="1675204817499" duration="3624000" />
       <workItem from="1675210959043" duration="222000" />
       <workItem from="1675253585468" duration="5201000" />
-      <workItem from="1675275557856" duration="5525000" />
+      <workItem from="1675275557856" duration="5909000" />
     </task>
     <task id="LOCAL-00001" summary="Adding the motivation section">
       <created>1675205795349</created>
@@ -82,7 +77,28 @@
       <option name="project" value="LOCAL" />
       <updated>1675205795349</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updating archives">
+      <created>1675281330673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675281330673</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding the data of the top 5 leagues in Europe">
+      <created>1675281406250</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675281406250</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Starting to understand and correct the data - Version .ipynb">
+      <created>1675281473704</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675281473704</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,6 +117,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding the motivation section" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding the motivation section" />
+    <MESSAGE value="Updating archives" />
+    <MESSAGE value="Adding the data of the top 5 leagues in Europe" />
+    <MESSAGE value="Starting to understand and correct the data - Version .ipynb" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting to understand and correct the data - Version .ipynb" />
   </component>
 </project>
