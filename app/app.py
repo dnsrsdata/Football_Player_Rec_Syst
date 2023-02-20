@@ -34,9 +34,13 @@ data_to_show = data_to_show.query(f"Pos == '{position}'")
 
 # Writing the page header and sub header
 st.header("Player recommendation system")
-st.subheader(f'Players similar to {player_name}:')
+st.subheader(f':soccer: Players similar to {player_name}:')
 
 # Showing the table with the recommendations
 data_to_show = data_to_show.reset_index().drop(columns='index')
 st.write(data_to_show.head(rec_qtd))
 # %%
+st.subheader(":bar_chart: Check here the statistics of the players in the season:")
+possible_choices = data_to_show.head(rec_qtd).Player.to_list()
+possible_choices.append(player_name)
+choices = st.multiselect("Players", options=possible_choices)
