@@ -12,8 +12,11 @@ team = st.sidebar.selectbox('Pick a team:', options=cleaned_data.Squad.drop_dupl
 player_name = st.sidebar.selectbox('Select a player:',
                                    options=cleaned_data.query(f"Squad == '{team}'").Player.drop_duplicates())
 
+# Adding a checkbox
+agree = st.sidebar.checkbox('I only want to see players who play in the same position.')
+
 # Getting the amount of recommendations
-rec_qtd = st.sidebar.selectbox('Choose the number of recommendations:', options=(5, 10, 15, 20, 25, 30))
+rec_qtd = st.sidebar.selectbox('Choose the number of recommendations:', options=(5, 10, 15, 20, 25))
 
 # Creating the sidebar
 st.sidebar.write(":warning: The further down the table, the more precise the recommendation is.")
@@ -27,20 +30,28 @@ indexes = similarity_df.loc[id_player].sort_values(ascending=False).index.to_lis
 # Removing the player himself from the dice
 del indexes[0]
 
-# Getting player position and filtering similar players by position
-position = cleaned_data.query(f"id == '{id_player}'").Pos.values[0]
-data_to_show = cleaned_data.query(f"id == {indexes}")[['Player', 'Age', 'Pos', 'Squad']]
-data_to_show = data_to_show.query(f"Pos == '{position}'")
+# Getting players data
+copy_cleaned_data = cleaned_data.set_index('id').copy()
+data_to_show = copy_cleaned_data.loc[indexes, ['Player', 'Age', 'Pos', 'Squad']]
+
+# Filtering similar players by position
+if agree:
+    position = cleaned_data.query(f"id == '{id_player}'").Pos.values[0]
+    data_to_show = data_to_show.query(f"Pos == '{position}'")
 
 # Writing the page header and sub header
 st.header("Player recommendation system")
 st.subheader(f':soccer: Players similar to {player_name}:')
 
 # Showing the table with the recommendations
-data_to_show = data_to_show.reset_index().drop(columns='index')
 st.write(data_to_show.head(rec_qtd))
 # %%
 st.subheader(":bar_chart: Check here the statistics of the players in the season:")
 possible_choices = data_to_show.head(rec_qtd).Player.to_list()
 possible_choices.append(player_name)
 choices = st.multiselect("Players", options=possible_choices)
+
+#%%
+
+
+
