@@ -81,7 +81,7 @@ Finally, we obtained a system that could make life easier for club scouts, helpi
 
 ## Improvement
 - [❌] Create Python scripts from Notebooks
-- [❌] Containerize the project
+- [❌] Containerize the project and deploy on AWS.
 - [❌] Add each player's market value
 
 ## Instructions:
