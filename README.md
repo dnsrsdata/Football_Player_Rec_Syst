@@ -44,7 +44,7 @@ To evaluate, I will use the Jaccard index, as I will transform my data into bina
 this, calculating the level of similarity between players.
 <br>
 <br>
-<img src="https://latex.codecogs.com/gif.latex?J(A, B)=\frac {A \cap B}{A \cup B}"/>
+<img src="http://www.sciweavers.org/tex2img.php?eq=J%28A%2C%20B%29%3D%20%5Cfrac%7BA%20%5Ccap%20B%7D%7BA%20%5Ccup%20B%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="J(A, B)= \frac{A \cap B}{A \cup B}" width="122" height="43" />
 
 ## Data characteristic
 Although we are working with data from several leagues, we only have 4 datasets, where only 1 contains data from 5 
