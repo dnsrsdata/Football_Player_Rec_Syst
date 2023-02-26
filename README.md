@@ -79,8 +79,8 @@ The other parts proved to be lighter and easier to deal with, as I was able to a
 Finally, we obtained a system that could make life easier for club scouts, helping both in the discovery of new potential players and for quick action after the loss of an important player, a problem that affects most clubs.
 
 ## Improvement
-- [❌] Create Python scripts from Notebooks
-- [❌] Containerize the project and deploy on AWS.
+- [✔️] Create Python scripts from Notebooks
+- [⏳] Containerize the project and deploy on AWS.
 - [❌] Add each player's market value
 
 ## Instructions:
