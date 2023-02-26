@@ -49,17 +49,18 @@ st.write(data_to_show.head(rec_qtd))
 st.subheader(":bar_chart: Compare player stats from last season:")
 possible_choices = data_to_show.head(rec_qtd).Player.to_list()
 choices = st.multiselect("Players", options=possible_choices)
-choices.append(player_name)
+choices = data_to_show.query(f"Player == {choices}").index.to_list()
+choices.append(id_player)
 
 # %%
 # Saving a new table
-data_to_plot = cleaned_data.set_index('Player').copy()
+data_to_plot = cleaned_data.set_index('id').copy()
 
 # Specifying columns by position
-fw_stats = ['Gls', 'Sh', 'G/Sh', 'Sh/90']
-mf_stats = ['Gls', 'Att_Passes', 'Cmp%', 'Mid 3rd']
-df_stats = ['Tkl+Int', 'Blocks', 'Pass']
-gk_stats = ['Save%', 'Save%.1']
+fw_stats = ['Gls', 'Sh', 'G/Sh', 'Sh/90', 'Player']
+mf_stats = ['Gls', 'Att_Passes', 'Cmp%', 'Mid 3rd', 'Player']
+df_stats = ['Tkl+Int', 'Blocks', 'Pass', 'Player']
+gk_stats = ['Save%', 'Save%.1', 'Player']
 
 # Specifying a new columns name
 new_fw_columns_name = {'Gls': 'Goals', 'Sh': 'Shoots', 'G/Sh': 'Goals per Shoot', 'Sh/90': 'Shoots per 90 Min'}
@@ -75,22 +76,26 @@ position = cleaned_data.query(f"Player == '{player_name}'").Pos.values[0][:2]
 if position == 'FW':
     forward_stats = data_to_plot.loc[choices, fw_stats]
     forward_stats = forward_stats.rename(columns=new_fw_columns_name)
+    forward_stats = forward_stats.set_index('Player')
     st.bar_chart(forward_stats)
 
 # Plotting graphs for midfielders
 elif position == 'MF':
     midfielder_stats = data_to_plot.loc[choices, mf_stats]
     midfielder_stats = midfielder_stats.rename(columns=new_mf_columns_name)
+    midfielder_stats = midfielder_stats.set_index('Player')
     st.bar_chart(midfielder_stats)
 
 # Plotting graphs for defensors
 elif position == 'DF':
     defensor_stats = data_to_plot.loc[choices, df_stats]
     defensor_stats = defensor_stats.rename(columns=new_df_columns_name)
+    defensor_stats = defensor_stats.set_index('Player')
     st.bar_chart(defensor_stats)
 
 # Plotting graphs for goalkeepers
 else:
     goalkeeper_stats = data_to_plot.loc[choices, gk_stats]
     goalkeeper_stats = goalkeeper_stats.rename(columns=new_gk_columns_name)
+    goalkeeper_stats = goalkeeper_stats.set_index('Player')
     st.bar_chart(goalkeeper_stats)
