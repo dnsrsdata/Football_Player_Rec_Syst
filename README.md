@@ -40,8 +40,7 @@ to the player that the club lost, making this period of search for substitutes l
 replace him with more quality.
 
 ## Metrics
-To evaluate, I will use the Jaccard index, as I will transform my data into binary vectors, and this metric is suitable 
-this, calculating the level of similarity between players.
+To evaluate, the Jaccard index will be used, which calculates the similarity based on the intersection of values between two samples.
 <br>
 <br>
 <img src="http://www.sciweavers.org/tex2img.php?eq=J%28A%2C%20B%29%3D%20%5Cfrac%7BA%20%5Ccap%20B%7D%7BA%20%5Ccup%20B%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="J(A, B)= \frac{A \cap B}{A \cup B}" width="122" height="43" />
