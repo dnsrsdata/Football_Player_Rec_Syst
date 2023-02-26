@@ -104,6 +104,26 @@ the same version.
 
 3. Go to http://localhost:8501/
 
+## Updating for new seasons
+When new season data is obtained, the system can be updated using the following commands:
+
+1. Get and clear the data
+   ```sh
+   python src/data/ETL.py data/raw/passes_bg5.csv data/raw/passes_Eredivisie.csv data/raw/passes_PrimeiraLiga.csv data/raw/passes_BrasileiroSerieA.csv data/raw/shoots_bg5.csv data/raw/shoots_Eredivisie.csv data/raw/shoots_PrimeiraLiga.csv data/raw/shoots_BrasileiroSerieA.csv data/raw/defense_actions_bg5.csv data/raw/defense_actions_Eredivisie.csv data/raw/defense_actions_PrimeiraLiga.csv data/raw/defense_actions_BrasileiroSerieA.csv data/raw/goalkeepers_bg5.csv data/raw/goalkeepers_Eredivisie.csv data/raw/goalkeepers_PrimeiraLiga.csv data/raw/goalkeepers_BrasileiroSerieA.csv
+   ```
+   
+2. Get similarity
+   ```sh
+   pyhton src/models/similarity_calc.py data/processed/binarized_data.csv
+   ```
+
+3. Run the following command in the app's directory to run your web app
+    ```sh
+    streamlit run app.py
+    ```
+
+After that, you should get a system with updated data. Make sure you assign the correct names and paths to the csv files.
+
 ## File Descriptions
     - app
     |- app.py  # Python file that runs app
