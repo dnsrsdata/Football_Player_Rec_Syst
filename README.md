@@ -83,6 +83,9 @@ Finally, we obtained a system that could make life easier for club scouts, helpi
 - [⏳] Containerize the project and deploy on AWS.
 - [❌] Add each player's market value
 
+## Results
+[Screencast from 17-10-2023 15:54:47.webm](https://github.com/dnsrsdata/Football_Player_Rec_Syst/assets/59318930/aa5b8dc5-9fd5-4c38-8985-c0ba08eacf02)
+
 ## Instructions:
 Follow the steps below to be able to play the project locally.
 
@@ -173,9 +176,6 @@ After that, you should get a system with updated data. Make sure you assign the 
     |
     - README.md  # file containing project information
     - requirements.txt # file containing the necessary packages for the project to work
-
-## Results
-You can check the result by accessing http://localhost:8501/ after following the installation steps.
 
 ## Licensing, Authors, Acknowledgements
 Must give credit to Fbref for the data. Otherwise, feel free to use the code here as you would like!
